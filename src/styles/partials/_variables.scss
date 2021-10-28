@@ -1,0 +1,24 @@
+//Variables
+$breakpoint-tablet: 767px;
+$breakpoint-desktop: 1280px;
+
+//Colors
+$BrainFlix-Black: #323232;
+$BrainFlix-Blue: #0095ff;
+$Silver: #afafaf;
+$White: #ffffff;
+$BrainFlix-DarkBlack: #000000;
+$BrainFlix-DarkBlue: #0065ad;
+$Mercury: #e1e1e1;
+$Alabaster: #fafafa;
+
+//Fonts
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
+}

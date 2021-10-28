@@ -1,0 +1,147 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    max-width: 7.5rem;
+    align-self: center;
+    margin-top: 1rem;
+
+    @include tablet {
+      margin: 0rem 3rem;
+      margin-right: 0rem;
+    }
+
+    @include desktop {
+      margin-left: 7rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__elements {
+    margin: 1rem 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__search-bar {
+    background: url("../../assets/icons/search.svg") left no-repeat;
+    background-color: $Alabaster;
+    border: 1px solid $Mercury;
+    background-origin: content-box;
+    padding: 0rem 1rem;
+    border-radius: 0.25rem;
+    font-family: "Avenir Next Regular";
+    font-size: 0.75rem;
+    color: $Silver;
+    font-weight: bold;
+    height: 2.55rem;
+    width: 87vw;
+    margin: 0rem 1rem;
+
+    @include tablet {
+      width: 36vw;
+    }
+
+    @include desktop {
+      width: 20vw;
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    height: 2.55rem;
+    width: 2.55rem;
+    background-image: url("../../assets/images/Mohan-muruge.jpg");
+    background-size: cover;
+    margin-right: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__avatar-alt {
+    display: none;
+    border-radius: 50%;
+    height: 2.55rem;
+    width: 2.55rem;
+    background-image: url("../../assets/images/Mohan-muruge.jpg");
+    background-size: cover;
+
+    @include tablet {
+      display: flex;
+      margin: 1rem 1rem;
+      margin-right: 3rem;
+    }
+
+    @include desktop {
+      margin-right: 7rem;
+      margin-left: 1.75rem;
+    }
+  }
+
+  &__button {
+    background-color: $BrainFlix-Blue;
+    color: $White;
+    font-family: "Avenir Next Regular";
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-align: center;
+    height: 2.5rem;
+    width: 100vw;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 1rem;
+    margin: 0rem 1rem;
+    position: relative;
+
+    &:hover {
+      background-color: $BrainFlix-DarkBlue;
+    }
+
+    @include tablet {
+      margin: 1rem;
+      margin-right: 0rem;
+      width: 9rem;
+    }
+  }
+
+  &__button-icon {
+    background-image: url("../../assets/icons/upload.svg");
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0.75rem;
+
+    @include tablet {
+      width: 25px;
+      height: 25px;
+      left: 0.25rem;
+    }
+  }
+}
