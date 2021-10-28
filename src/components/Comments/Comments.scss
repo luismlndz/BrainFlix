@@ -1,0 +1,58 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comments {
+  margin: 0rem 1rem;
+
+  @include tablet {
+    margin: 0rem 3rem;
+  }
+
+  &__container {
+    display: flex;
+    border-bottom: 1px solid $Mercury;
+    margin-top: 1rem;
+  }
+
+  &__avatar {
+    width: 2.7rem;
+    height: 2.7rem;
+    background-color: $Mercury;
+    background-size: contain;
+    border-radius: 50%;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 1rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    font-family: "Avenir Next Bold";
+    color: $BrainFlix-Black;
+    font-size: 1.2rem;
+    margin: 0rem;
+  }
+
+  &__date {
+    font-family: "Avenir Next Regular";
+    color: $Silver;
+    font-size: 1.2rem;
+    margin: 0rem;
+  }
+
+  &__content {
+    color: $BrainFlix-Black;
+    font-family: "Avenir Next Regular";
+    font-size: 1.2rem;
+    text-align: start;
+    margin-bottom: 1rem;
+  }
+}
