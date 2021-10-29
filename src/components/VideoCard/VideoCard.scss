@@ -1,0 +1,47 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-card {
+  margin: 1rem;
+  display: flex;
+
+  @include tablet {
+    margin: 1rem 3rem;
+  }
+
+  &__thumbnail {
+    width: 175px;
+    height: 100px;
+    align-self: flex-start;
+    border-radius: 0.25rem;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    height: 100px;
+    margin-left: 1rem;
+  }
+
+  &__title {
+    font-family: "Avenir Next Bold";
+    color: $BrainFlix-Black;
+    font-size: 1.2rem;
+    margin: 0rem;
+    text-align: start;
+
+    @include tablet {
+      max-width: 300px;
+    }
+  }
+
+  &__channel {
+    color: $BrainFlix-Black;
+    font-family: "Avenir Next Regular";
+    font-size: 1.2rem;
+    text-align: start;
+    margin: 0rem;
+  }
+}

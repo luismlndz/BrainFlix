@@ -1,0 +1,113 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form-container {
+  display: flex;
+  margin: 0rem 1rem;
+  border-bottom: 1px solid $Mercury;
+
+  @include tablet {
+    margin: 0rem 3rem;
+  }
+
+  @include desktop {
+    margin-right: 0rem;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 2.55rem;
+  width: 2.55rem;
+  background-image: url("../../assets/images/Mohan-muruge.jpg");
+  background-size: cover;
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__subcontainer {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: "Avenir Next Bold";
+    color: $Silver;
+    font-size: 1.2rem;
+    margin: 0rem;
+    margin-bottom: 0.5rem;
+    text-align: start;
+  }
+
+  &__input {
+    background-color: $Alabaster;
+    border: 1px solid $Mercury;
+    border-radius: 0.25rem;
+    resize: none;
+    height: 6rem;
+    color: black;
+    font-family: "Avenir Next Regular";
+    font-size: 1.2rem;
+    text-align: start;
+    padding: 1rem;
+
+    @include tablet {
+      height: 2rem;
+      padding: 0.2rem;
+      padding-left: 1rem;
+    }
+  }
+
+  &__button {
+    background-color: $BrainFlix-Blue;
+    color: $White;
+    font-family: "Avenir Next Regular";
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-align: center;
+    height: 2.5rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 1rem;
+    margin: 1rem 0rem;
+    position: relative;
+
+    &:hover {
+      background-color: $BrainFlix-DarkBlue;
+    }
+
+    @include tablet {
+      width: 200px;
+      margin: 2rem 0rem;
+      margin-left: 2rem;
+    }
+  }
+
+  &__button-icon {
+    background-image: url("../../assets/icons/add_comment.svg");
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0.75rem;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Description.scss"
 
-class Description extends React.Component {
+export default class Description extends React.Component {
     render() {
         return (
             <div className="container">
@@ -27,5 +27,3 @@ class Description extends React.Component {
           );
     }
 }
-
-export default Description;

@@ -1,0 +1,14 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comment-count {
+  font-family: "Avenir Next Bold";
+  color: $BrainFlix-Black;
+  font-size: 1.2rem;
+  margin: 1.5rem 1rem;
+  text-align: start;
+
+  @include tablet {
+    margin: 2rem 3rem;
+  }
+}

@@ -1,11 +1,15 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.comments {
+.comment {
   margin: 0rem 1rem;
 
   @include tablet {
     margin: 0rem 3rem;
+  }
+
+  @include desktop {
+    margin-right: 0;
   }
 
   &__container {
@@ -31,6 +35,7 @@
 
   &__header {
     display: flex;
+    width: 101%;
     justify-content: space-between;
   }
 
