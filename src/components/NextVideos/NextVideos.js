@@ -1,8 +1,8 @@
-import React from "react"
+import {Component} from "react"
 import "./NextVideos.scss"
 import VideoCard from "./VideoCard/VideoCard";
 
-export default class NextVideos extends React.Component {
+export default class NextVideos extends Component {
 
     render() {
         return (
@@ -16,8 +16,7 @@ export default class NextVideos extends React.Component {
                 id={this.props.data.indexOf(video)}
                 thumbnail={video.image}
                 title={video.title}
-                channel={video.channel}
-                />
+                channel={video.channel}/>
             ))}
         </div>
         );

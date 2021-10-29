@@ -1,5 +1,5 @@
-import React from 'react';
-import './App.scss';
+import {Component} from 'react';
+import './BrainFlix.scss';
 import Header from "./components/Header/Header"
 import Video from './components/Video/Video';
 import Description from './components/Video/Description/Description';
@@ -7,7 +7,7 @@ import CommentSection from './components/CommentSection.js/CommentSection';
 import NextVideos from './components/NextVideos/NextVideos';
 import data from "./data/video-details.json"
 
-export default class App extends React.Component {
+export default class BrainFlix extends Component {
 
   state = {
     currentVideo: data[0]
@@ -30,11 +30,13 @@ export default class App extends React.Component {
           timestamp={this.state.currentVideo.timestamp}
           views={this.state.currentVideo.views}
           likes={this.state.currentVideo.likes}
-          description={this.state.currentVideo.description}
-          />
+          description={this.state.currentVideo.description}/>
           <CommentSection currentVideo={this.state.currentVideo}/>
         </div>
-        <NextVideos clickHandler={this.selectVideo} currentVideo={this.state.currentVideo} data={data}/>
+        <NextVideos 
+        clickHandler={this.selectVideo} 
+        currentVideo={this.state.currentVideo} 
+        data={data}/>
       </main>
       </>
     );

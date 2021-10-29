@@ -1,7 +1,7 @@
-import React from "react"
+import {Component} from "react"
 import "./VideoCard.scss"
 
-export default class VideoCard extends React.Component {
+export default class VideoCard extends Component {
 
     handleClick = (index) => {
         this.props.clickHandler(index)

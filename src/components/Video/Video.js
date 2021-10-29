@@ -1,7 +1,7 @@
-import React from "react";
+import {Component} from "react";
 import "./Video.scss"
 
-export default class Video extends React.Component {
+export default class Video extends Component {
 
   render() {
     return (

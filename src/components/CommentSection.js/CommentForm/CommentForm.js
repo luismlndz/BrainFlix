@@ -1,7 +1,7 @@
-import React from "react"
+import {Component} from "react"
 import "./CommentForm.scss"
 
-export default class CommentForm extends React.Component {
+export default class CommentForm extends Component {
 
     handleClick = (event) => {
         event.preventDefault()

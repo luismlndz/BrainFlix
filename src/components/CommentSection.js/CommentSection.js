@@ -1,9 +1,9 @@
-import React from "react"
+import {Component} from "react"
 import "./CommentSection.scss"
 import CommentForm from "./CommentForm/CommentForm";
 import Comment from "./Comment/Comment";
 
-export default class CommentSection extends React.Component {
+export default class CommentSection extends Component {
 
     addComment = (comment) => {
         //Will be implemented in future sprint

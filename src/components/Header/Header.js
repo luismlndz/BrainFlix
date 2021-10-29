@@ -1,8 +1,8 @@
-import React from "react";
+import {Component} from "react";
 import "../Header/Header.scss"
 import logo from "../../assets/logo/BrainFlix-logo.svg"
 
-export default class Header extends React.Component{
+export default class Header extends Component{
 
     render() {
         return (
