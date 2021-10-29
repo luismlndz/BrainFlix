@@ -1,7 +1,7 @@
 import React from "react"
 import "./CommentSection.scss"
-import CommentForm from "../CommentForm/CommentForm";
-import Comment from "../Comment/Comment";
+import CommentForm from "./CommentForm/CommentForm";
+import Comment from "./Comment/Comment";
 
 export default class CommentSection extends React.Component {
 

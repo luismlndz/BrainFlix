@@ -1,12 +1,18 @@
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables" as *;
 
 .video-card {
   margin: 1rem;
   display: flex;
+  border-radius: 0.25rem;
 
   @include tablet {
     margin: 1rem 3rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $Mercury;
   }
 
   &__thumbnail {

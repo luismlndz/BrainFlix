@@ -5,6 +5,15 @@
   background-color: black;
   display: flex;
   justify-content: center;
+  max-height: 300px;
+
+  @include tablet {
+    max-height: 450px;
+  }
+
+  @include desktop {
+    max-height: 550px;
+  }
 }
 
 .video {
