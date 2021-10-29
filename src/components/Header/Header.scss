@@ -44,11 +44,10 @@
   }
 
   &__search-bar {
-    background: url("../../assets/icons/search.svg") left no-repeat;
+    background: url("../../assets/icons/search.svg") 1rem no-repeat;
     background-color: $Alabaster;
     border: 1px solid $Mercury;
-    background-origin: content-box;
-    padding: 0rem 1rem;
+    padding: 0rem 3rem;
     border-radius: 0.25rem;
     font-family: "Avenir Next Regular";
     font-size: 0.75rem;

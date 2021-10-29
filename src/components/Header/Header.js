@@ -7,10 +7,10 @@ export default class Header extends Component{
     render() {
         return (
             <div className="header">
-                <img src={logo} className="header__logo" alt="logo"></img>
+                <a className="header__logo" href="/" ><img src={logo} alt="logo"></img></a>
                 <div className="header__content">
                     <div className="header__elements">
-                        <input className="header__search-bar" type="search" placeholder="         Search"></input>
+                        <input className="header__search-bar" type="search" placeholder="Search"></input>
                         <div className="header__avatar"></div>
                     </div>
                     <div className="header__button">
