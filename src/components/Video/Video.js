@@ -9,7 +9,7 @@ export default class Video extends Component {
         <video 
         className="video" 
         controls 
-        poster={this.props.video.image}>
+        poster={this.props.currentVideo.image}>
         </video>
       </div>
     );

@@ -1,5 +1,5 @@
-@use "../../../styles/partials/variables" as *;
-@use "../../../styles/partials/mixins" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .container {
   margin: 0rem 1rem;
@@ -82,7 +82,7 @@
   &__icon {
     width: 30px;
     height: 20px;
-    background-image: url("../../../assets/icons/views.svg");
+    background-image: url("../../assets/icons/views.svg");
     background-size: contain;
     background-repeat: no-repeat;
     margin: 0rem 0.5rem;
@@ -90,7 +90,7 @@
     &--likes {
       width: 30px;
       height: 25px;
-      background-image: url("../../../assets/icons/likes.svg");
+      background-image: url("../../assets/icons/likes.svg");
       background-size: contain;
       background-repeat: no-repeat;
       margin: 0rem 0.5rem;

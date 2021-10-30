@@ -11,26 +11,25 @@ export default class Description extends Component {
     render() {
         return (
             <div className="container">
-              <h1 className="title">{this.props.title}</h1>
+              <h1 className="title">{this.props.currentVideo.title}</h1>
               <div className="insights">
                 <div className="video-info">
-                    <span className="video-info__channel">{`By ${this.props.channel}`}</span>
-                    {/* <span className="video-info__date">{new Date(this.props.timestamp).toLocaleDateString()}</span> */}
-                    <span className="video-info__date">{<ReactTimeAgo date={this.props.timestamp} locale={"en-US"}/>}</span>
+                    <span className="video-info__channel">{`By ${this.props.currentVideo.channel}`}</span>
+                    <span className="video-info__date">{<ReactTimeAgo date={this.props.currentVideo.timestamp} locale={"en-US"}/>}</span>
                     <span className="video-info__date">{}</span>
                 </div>
                 <div className="interactions">
                     <span className="interactions__views">
                         <div className="interactions__icon"></div>
-                        {this.props.views}
+                        {this.props.currentVideo.views}
                     </span>
                     <span className="interactions__likes">
                         <div className="interactions__icon--likes"></div>
-                        {this.props.likes}
+                        {this.props.currentVideo.likes}
                     </span>
                 </div>
               </div>
-              <p className="description">{this.props.description}</p>
+              <p className="description">{this.props.currentVideo.description}</p>
             </div>
           );
     }
