@@ -14,9 +14,7 @@ export default class NextVideos extends Component {
                 key={index}
                 clickHandler={this.props.clickHandler}
                 id={this.props.data.indexOf(video)}
-                thumbnail={video.image}
-                title={video.title}
-                channel={video.channel}/>
+                video={video}/>
             ))}
         </div>
         );
