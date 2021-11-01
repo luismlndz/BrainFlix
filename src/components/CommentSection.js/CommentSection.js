@@ -17,13 +17,7 @@ export default class CommentSection extends Component {
         <CommentForm addComment={this.addComment}/>
         {/* Comments */}
         {this.props.currentVideo.comments.map((comment, index) => (
-          <Comment
-          key={index}
-          name={comment.name}
-          comment={comment.comment}
-          likes={comment.likes}
-          timestamp={comment.timestamp}
-          />
+          <Comment key={index} comment={comment}/>
         ))}
         </>
         );

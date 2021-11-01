@@ -16,10 +16,10 @@ export default class Comment extends Component {
             <div className="comment__avatar"></div>
             <div className="comment__text">
                 <div className="comment__header">
-                    <p className="comment__name">{this.props.name}</p>
-                    <p className="comment__date">{<ReactTimeAgo date={this.props.timestamp} locale={"en-US"}/>}</p>
+                    <p className="comment__name">{this.props.comment.name}</p>
+                    <p className="comment__date">{<ReactTimeAgo date={this.props.comment.timestamp} locale={"en-US"}/>}</p>
                 </div>
-                <p className="comment__content">{this.props.comment}</p>
+                <p className="comment__content">{this.props.comment.comment}</p>
             </div>
         </div>
       </div>
