@@ -1,11 +1,6 @@
 import {Component} from "react"
 import "./Comment.scss"
-import TimeAgo from "javascript-time-ago"
-import en from "javascript-time-ago/locale/en.json"
-import ru from "javascript-time-ago/locale/ru.json"
 import ReactTimeAgo from "react-time-ago";
-TimeAgo.addDefaultLocale(en)
-TimeAgo.addLocale(ru)
 
 export default class Comment extends Component {
 
@@ -22,7 +17,6 @@ export default class Comment extends Component {
                 <p className="comment__content">{this.props.comment.comment}</p>
             </div>
         </div>
-      </div>
-    );
+      </div>);
   }
 }

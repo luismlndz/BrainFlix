@@ -12,14 +12,14 @@ export default class CommentSection extends Component {
     render() {
         return (
         <>
-        <p className="comment-count">{`${this.props.currentVideo.comments.length} Comments`}</p>
-        {/* Comment Form */}
-        <CommentForm addComment={this.addComment}/>
-        {/* Comments */}
-        {this.props.currentVideo.comments.map((comment, index) => (
-          <Comment key={index} comment={comment}/>
-        ))}
-        </>
-        );
+            {/* Comment Counter */}
+            <p className="comment-count">{`${this.props.currentVideo.comments.length} Comments`}</p>
+            {/* Comment Form */}
+            <CommentForm addComment={this.addComment}/>
+            {/* Comments */}
+            {this.props.currentVideo.comments.map((comment, index) => (
+                <Comment key={index} comment={comment}/>
+            ))}
+        </>);
     }
 }

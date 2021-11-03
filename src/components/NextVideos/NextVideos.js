@@ -16,7 +16,6 @@ export default class NextVideos extends Component {
                 id={this.props.data.indexOf(video)}
                 video={video}/>
             ))}
-        </div>
-        );
+        </div>);
     }
 }

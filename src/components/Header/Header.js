@@ -1,5 +1,6 @@
 import {Component} from "react";
 import "../Header/Header.scss"
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo/BrainFlix-logo.svg"
 
 export default class Header extends Component{
@@ -13,10 +14,12 @@ export default class Header extends Component{
                         <input className="header__search-bar" type="search" placeholder="Search"></input>
                         <div className="header__avatar"></div>
                     </div>
-                    <div className="header__button">
-                        <span className="header__button-icon"></span>
-                        <span>UPLOAD</span>
-                    </div>
+                    <Link className="header__button-link" to="/upload">
+                        <div className="header__button">
+                            <span className="header__button-icon"></span>
+                            <span>UPLOAD</span>
+                        </div>
+                    </Link>
                     <div className="header__avatar-alt"></div>
                 </div>
             </div>
