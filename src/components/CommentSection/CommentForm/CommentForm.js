@@ -1,19 +1,27 @@
-import {Component} from "react"
 import "./CommentForm.scss"
 
-export default class CommentForm extends Component {
+export default function CommentForm(props) {
 
-    handleClick = (event) => {
+    const handleClick = (event) => {
         event.preventDefault()
-        console.log(event.target.input.value)
-        // Rest will be implemented in later sprint
+
+        if(!event.target.input.value) {
+            alert("Field cannot be empty!")
+            return
+        }
+
+        const newComment = {
+            name: "Luis Melendez",
+            comment: event.target.input.value
+        }
+        props.addComment(newComment)
+        event.target.reset()
     }
 
-    render() {
-        return (
+    return (
         <div className="form-container">
             <div className="avatar"></div>
-            <form onSubmit={this.handleClick} className="form">
+            <form onSubmit={handleClick} className="form">
                 <div className="form__subcontainer">
                     <p className="form__title">JOIN THE CONVERSATION</p>
                     <textarea className="form__input" name="input" placeholder="Add a new comment"></textarea>
@@ -23,6 +31,5 @@ export default class CommentForm extends Component {
                     COMMENT</button>
             </form>
         </div>
-        );
-    }
+    );
 }
