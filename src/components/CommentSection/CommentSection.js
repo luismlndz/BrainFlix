@@ -1,6 +1,6 @@
 import "./CommentSection.scss"
-import CommentForm from "./CommentForm/CommentForm";
-import Comment from "./Comment/Comment";
+import CommentForm from "../CommentForm/CommentForm";
+import Comment from "../Comment/Comment";
 
 export default function CommentSection(props) {
 

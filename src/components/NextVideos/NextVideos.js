@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./NextVideos.scss"
-import VideoCard from "./VideoCard/VideoCard";
+import VideoCard from "../VideoCard/VideoCard";
 
 export default function NextVideos(props) {
 

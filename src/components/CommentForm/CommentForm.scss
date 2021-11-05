@@ -1,5 +1,5 @@
-@use "../../../styles/partials/mixins" as *;
-@use "../../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .form-container {
   display: flex;
@@ -19,7 +19,7 @@
   border-radius: 50%;
   height: 2.55rem;
   width: 2.55rem;
-  background-image: url("../../../assets/images/Mohan-muruge.jpg");
+  background-image: url("../../assets/images/Mohan-muruge.jpg");
   background-size: cover;
   margin-right: 1rem;
   margin-top: 2rem;
@@ -104,7 +104,7 @@
   }
 
   &__button-icon {
-    background-image: url("../../../assets/icons/add_comment.svg");
+    background-image: url("../../assets/icons/add_comment.svg");
     background-size: contain;
     width: 20px;
     height: 20px;

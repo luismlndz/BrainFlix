@@ -12,7 +12,7 @@ export default function CommentForm(props) {
         }
 
         const newComment = {
-            name: "Luis Melendez",
+            name: "Brainstation Man",
             comment: event.target.input.value
         }
         props.addComment(newComment)
