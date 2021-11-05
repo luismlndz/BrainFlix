@@ -13,9 +13,12 @@ export default function NextVideos(props) {
             <p className="header-text">NEXT VIDEOS</p>
             {props.videos.map((video) => {
                 return (
-                    <Link onClick={() => {handleCLick(video)}} key={video.id} to={`/video/${video.id}`} className="link">
-                        <VideoCard 
-                        currentVideo={video}/>
+                    <Link 
+                    onClick={() => {handleCLick(video)}} 
+                    key={video.id} 
+                    to={`/video/${video.id}`} 
+                    className="link">
+                        <VideoCard currentVideo={video}/>
                     </Link>
                 )
             })}

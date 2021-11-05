@@ -1,4 +1,4 @@
-import {Component} from "react";
+import { Component } from "react";
 import "./Video.scss"
 
 export default class Video extends Component {
