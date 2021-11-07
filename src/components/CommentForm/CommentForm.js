@@ -4,13 +4,11 @@ export default function CommentForm(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-
         if(!event.target.input.value) {
             const field = document.getElementById("field")
             field.style.border = "1px solid red"
             return
         }
-
         const newComment = {
             name: "Brainstation Man",
             comment: event.target.input.value

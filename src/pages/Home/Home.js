@@ -11,10 +11,15 @@ export default class Home extends Component {
 
   state = {
     currentVideo: {},
-    videos: [],
+    currentVideoDetails: {
+      timestamp: 0,
+      comments: []
+    },
+    nextVideos: [],
     isLoading: true
   }
 
+  // Set current video to url ID and then call api for video details & filter next videos
   componentDidMount() {
     axios.get(`${apiURL}/videos/${apiKEY}`)
     .then((response) => {
@@ -23,11 +28,19 @@ export default class Home extends Component {
           return video.id === this.props.match.params.id
         })
       }, () => {
+        axios.get(`${apiURL}/videos/${this.state.currentVideo.id}/${apiKEY}`)
+        .then((response) => {
+            this.setState({
+              currentVideoDetails: response.data,
+              nextVideos: filteredVideos, 
+              isLoading: false
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
         const filteredVideos = response.data.filter((video) => {
           return video.id !== this.state.currentVideo.id
-        })
-        this.setState({videos: filteredVideos}, () => {
-          this.setState({isLoading: false})
         })
       })
     })
@@ -36,39 +49,27 @@ export default class Home extends Component {
     })
   }
 
+  // Update only if url changes or if comments are added / deleted
   componentDidUpdate(prevProps) {
     if(prevProps.match.params.id !== this.props.match.params.id) {
-      axios.get(`${apiURL}/videos/${apiKEY}`)
-      .then((response) => {
-        const filteredArray = response.data.filter((video) => {
-          return video.id !== this.state.currentVideo.id
-        })
-        this.setState({videos: filteredArray})
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+      this.componentDidMount()
     }
-  }
-
-  handleUpdate = (video) => {
-    this.setState({currentVideo: video})
   }
 
   render() {
     return (
       <>
-      {!this.state.isLoading && 
+      {!this.state.isLoading ? 
         <>
           <Video currentVideo={this.state.currentVideo}/>
           <main>
             <div className="left-containter">
-              <VideoDetails currentVideo={this.state.currentVideo}/>
+              <VideoDetails videoDetails={this.state.currentVideoDetails}/>
             </div>
-            <NextVideos handleUpdate={this.handleUpdate} videos={this.state.videos}/>
+            <NextVideos videos={this.state.nextVideos}/>
           </main>
         </>
-      }
+      : <p className="loading">Loading...</p>}
       </>
     );
   }

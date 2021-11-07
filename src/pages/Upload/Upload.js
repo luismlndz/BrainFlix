@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Upload(){
 
   return (
-    <div className="upload">
+    <form className="upload">
         <h1 className="upload__title">Upload Video</h1>
         <div className="upload__fields">
           <div className="upload__image-container">
@@ -19,10 +19,10 @@ export default function Upload(){
           </div>
         </div>
         <div className="upload__options">
-          <button className="upload__button">
-              <span className="upload__button-icon"></span>PUBLISH</button>
+          <Link to="/" className="link"><button className="upload__button">
+              <span className="upload__button-icon"></span>PUBLISH</button></Link>
           <Link to="/" className="upload__cancel">CANCEL</Link>
         </div>
-    </div>
+    </form>
   );
 }
