@@ -29,6 +29,11 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
   }
 
   &__elements {
@@ -58,7 +63,7 @@
     margin: 0rem 1rem;
 
     @include tablet {
-      width: 36vw;
+      width: 35vw;
     }
 
     @include desktop {
@@ -107,7 +112,7 @@
     font-size: 0.85rem;
     text-align: center;
     height: 2.5rem;
-    width: 100vw;
+    width: auto;
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
@@ -127,6 +132,15 @@
       margin: 1rem;
       margin-right: 0rem;
       width: 9rem;
+    }
+
+    &-link {
+      text-decoration: none;
+      width: 100%;
+
+      @include tablet {
+        width: auto;
+      }
     }
   }
 

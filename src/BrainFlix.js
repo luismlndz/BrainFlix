@@ -1,38 +1,25 @@
-import {Component} from 'react';
-import './BrainFlix.scss';
 import Header from "./components/Header/Header"
-import Video from './components/Video/Video';
-import Description from './components/Description/Description';
-import CommentSection from './components/CommentSection.js/CommentSection';
-import NextVideos from './components/NextVideos/NextVideos';
-import data from "./data/video-details.json"
+import Home from "./pages/Home/Home"
+import Upload from "./pages/Upload/Upload"
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-export default class BrainFlix extends Component {
+export default function BrainFlix() {
 
-  state = {
-    currentVideo: data[0]
-  }
-
-  selectVideo = (index) => {
-    this.setState({currentVideo: data[index]})
-  }
-
-  render() {
-    return (
-      <>
+  return (
+    <BrowserRouter>
       <Header/>
-      <Video currentVideo={this.state.currentVideo}/>
-      <main>
-        <div className="left-containter">
-          <Description currentVideo={this.state.currentVideo}/>
-          <CommentSection currentVideo={this.state.currentVideo}/>
-        </div>
-        <NextVideos 
-        clickHandler={this.selectVideo} 
-        currentVideo={this.state.currentVideo} 
-        data={data}/>
-      </main>
-      </>
-    );
-  }
+      <Switch>
+        <Redirect
+          from="/"
+          to="/video/84e96018-4022-434e-80bf-000ce4cd12b8"
+          exact
+          component={Home}
+        />
+        <Route path="/upload" component={Upload}/>
+        <Route path="/video/:id" render={(props) => {
+          return(<Home {...props}/>)
+        }}/>
+      </Switch>
+    </BrowserRouter>
+  );
 }

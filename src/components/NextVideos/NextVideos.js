@@ -1,13 +1,13 @@
-import {Component} from "react"
+import { Link } from "react-router-dom";
 import "./NextVideos.scss"
-import VideoCard from "./VideoCard/VideoCard";
+import VideoCard from "../VideoCard/VideoCard";
 
-export default class NextVideos extends Component {
+export default function NextVideos(props) {
 
-    render() {
-        return (
+     return (
         <div className="videos-container">
             <p className="header-text">NEXT VIDEOS</p>
+<<<<<<< HEAD
             {this.props.data.filter((video) => (video !== this.props.currentVideo))
             .map((video, index) => (
                 <VideoCard
@@ -16,7 +16,15 @@ export default class NextVideos extends Component {
                 id={this.props.data.indexOf(video)}
                 video={video}/>
             ))}
+=======
+            {props.videos.map((video) => {
+                return (
+                    <Link key={video.id} to={`/video/${video.id}`} className="link">
+                        <VideoCard currentVideo={video}/>
+                    </Link>
+                )
+            })}
+>>>>>>> sprint-2
         </div>
-        );
-    }
+    );
 }

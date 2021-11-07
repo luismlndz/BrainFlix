@@ -1,5 +1,5 @@
-@use "../../../styles/partials/variables" as *;
-@use "../../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .comment {
   margin: 0rem 1rem;
@@ -35,7 +35,7 @@
 
   &__header {
     display: flex;
-    width: 101%;
+    width: 100%;
     justify-content: space-between;
   }
 
@@ -59,5 +59,35 @@
     font-size: 1.2rem;
     text-align: start;
     margin-bottom: 1rem;
+  }
+
+  &__delete {
+    background-color: $BrainFlix-Blue;
+    color: $White;
+    font-family: "Avenir Next Regular";
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-align: center;
+    height: 2.5rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 1rem;
+    margin: 1rem 0rem;
+    position: relative;
+
+    &:hover {
+      background-color: $BrainFlix-DarkBlue;
+    }
+
+    @include tablet {
+      width: 150px;
+      height: 2.85rem;
+      align-self: flex-end;
+    }
   }
 }

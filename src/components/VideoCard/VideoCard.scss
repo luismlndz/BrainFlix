@@ -1,10 +1,11 @@
-@use "../../../styles/partials/mixins" as *;
-@use "../../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .video-card {
   margin: 1rem;
   display: flex;
   border-radius: 0.25rem;
+  max-height: 100px;
 
   @include tablet {
     margin: 1rem 3rem;
@@ -16,10 +17,15 @@
   }
 
   &__thumbnail {
-    width: 175px;
-    height: 100px;
+    width: 140px;
+    height: 90px;
     align-self: flex-start;
     border-radius: 0.25rem;
+
+    @include tablet {
+      width: 200px;
+      height: 100px;
+    }
   }
 
   &__text {
@@ -27,26 +33,26 @@
     flex-direction: column;
     justify-content: space-between;
     width: 90%;
-    height: 100px;
     margin-left: 1rem;
   }
 
   &__title {
     font-family: "Avenir Next Bold";
     color: $BrainFlix-Black;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0rem;
     text-align: start;
 
     @include tablet {
-      max-width: 300px;
+      font-size: 1.2rem;
+      max-width: 30vw;
     }
   }
 
   &__channel {
     color: $BrainFlix-Black;
     font-family: "Avenir Next Regular";
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: start;
     margin: 0rem;
   }
