@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles/partials/_variables.scss","BrainFlix.scss","styles/partials/_mixins.scss"],"names":[],"mappings":"AAeA;EACE,kCAAA;EACA,0DAAA;ACdF;ADiBA;EACE,+BAAA;EACA,uDAAA;ACfF;ACEE;EDNF;IAEI,aAAA;IACA,iBAAA;EAMF;AACF;;ACJE;EDCF;IAEI,eAAA;EAMF;AACF;;AAHA;EACE,+BAAA;EACA,YAAA;EACA,iBAAA;EACA,kBAAA;EACA,iBAAA;AAMF","file":"BrainFlix.css"}

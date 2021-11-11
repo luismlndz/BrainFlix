@@ -65,7 +65,7 @@ export default class Home extends Component {
           <Video currentVideo={this.state.currentVideo}/>
           <main>
             <div className="left-containter">
-              <VideoDetails videoDetails={this.state.currentVideoDetails}/>
+              <VideoDetails {...this.props} videoDetails={this.state.currentVideoDetails}/>
             </div>
             <NextVideos videos={this.state.nextVideos}/>
           </main>

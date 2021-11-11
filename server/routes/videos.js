@@ -33,14 +33,13 @@ router.get('/:id', (req, res) => {
     })
     if(video)
         res.json(video)
-    else {
+    else
         res.status(404).send('Video with that ID was not found')
-    }
+    
 })
 
 //Post new video
 router.post('/', (req,res) => {
-    let videos = videosData
     const { title, description } = req.body
 
     if(!title || !description) {
@@ -53,14 +52,14 @@ router.post('/', (req,res) => {
         image: '../public/images/image0',
         channel: 'Brainstation Man',
         id: uuidv4(),
-        views: 0,
-        likes: 0,
+        views: "0",
+        likes: "0",
         timestamp: new Date().getTime(),
         comments: []
     }
-    videos.push(video)
+    videosData.push(video)
 
-    fs.writeFile('./data/videos.json', JSON.stringify(videos), (err) => {
+    fs.writeFile('./data/videos.json', JSON.stringify(videosData), (err) => {
         if(err)
             res.status(500).send(err)
         
@@ -121,5 +120,22 @@ router.delete('/:videoId/comments/:commentId', (req, res) => {
     })
 })
 
+//Liking Video (Diving Deeper)
+router.put('/:id', (req, res) => {
+    let video = videosData.find((video) => {
+        return video.id === req.params.id
+    })
+
+    let likes = parseInt(video.likes.replace(/\D/g,'')) + 1
+    video.likes = likes.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+
+    fs.writeFile('./data/videos.json', JSON.stringify(videosData), (err) => {
+        if(err)
+            res.status(500).send(err)
+        
+        console.log('Liked video successfully')
+        res.status(201).json(video)
+    })
+})
 
 module.exports = router

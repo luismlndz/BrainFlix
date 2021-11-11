@@ -5,7 +5,7 @@ export default function VideoDetails(props) {
 
     return (
         <>
-            <Description videoDetails={props.videoDetails}/>
+            <Description {...props} videoDetails={props.videoDetails}/>
             <CommentSection videoDetails={props.videoDetails}/>
         </>
     );

@@ -94,6 +94,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       margin: 0rem 0.5rem;
+      cursor: pointer;
     }
   }
 
@@ -128,4 +129,9 @@
   @include desktop {
     margin-right: 1rem;
   }
+}
+
+.selected {
+  background-image: url("../../assets/icons/likes-selected.svg");
+  cursor: auto;
 }
