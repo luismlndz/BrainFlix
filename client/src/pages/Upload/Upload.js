@@ -1,7 +1,6 @@
 import './Upload.scss';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios'
-import Home from '../Home/Home';
 const apiURL = 'http://localhost:8080'
 
 export default function Upload() {

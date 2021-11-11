@@ -39,11 +39,9 @@ export default class CommentSection extends Component {
     }
 
     handleDelete = (id) => {
-        axios.delete(`${apiURL}/videos/${this.props.videoDetails.id}/comments/${id}/`)
-        .then(() => {
-            this.setState({comments: this.state.comments.filter((comment) => {
-                return comment.id !== id
-            })})
+        axios.delete(`${apiURL}/videos/${this.props.videoDetails.id}/comments/${id}`)
+        .then((res) => {
+            this.setState({comments: res.data})
         })
         .catch((error) => {
             console.log(error)

@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
+}
+.video-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  max-height: 100vh;
+}
+
+.video {
+  width: 100vw;
+}
+@media (min-width: 767px) {
+  .video {
+    width: 90vw;
+  }
+}
+@media (min-width: 1280px) {
+  .video {
+    width: 70vw;
+  }
+}/*# sourceMappingURL=Video.css.map */

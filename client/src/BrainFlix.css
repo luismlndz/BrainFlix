@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
+}
+@media (min-width: 1280px) {
+  main {
+    display: flex;
+    margin: 0rem 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .left-containter {
+    max-width: 55vw;
+  }
+}
+
+.loading {
+  font-family: "Avenir Next Bold";
+  color: black;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: 30vh;
+}/*# sourceMappingURL=BrainFlix.css.map */
