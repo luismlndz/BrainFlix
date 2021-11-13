@@ -22,7 +22,7 @@ export default function Description(props) {
         axios.get(`${apiURL}/videos/${props.videoDetails.id}`).then((res) => {
             setLikes(res.data.likes)
         })
-    }, [likes, props.videoDetails, url, prevUrl])
+    }, [props.videoDetails, url, prevUrl])
 
     const likeVideo = (id) => {
         if(!button) {

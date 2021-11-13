@@ -47,7 +47,7 @@
   &__title {
     font-family: "Avenir Next Bold";
     color: $Silver;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0rem;
     margin-bottom: 0.5rem;
     text-align: start;
@@ -61,7 +61,7 @@
     height: 6rem;
     color: black;
     font-family: "Avenir Next Regular";
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: start;
     padding: 1rem;
 
@@ -69,7 +69,8 @@
       height: 2rem;
       padding: 0.2rem;
       padding-left: 1rem;
-      padding-top: 0.5rem;
+      padding-top: 0.75rem;
+      margin-top: 0.2rem;
     }
   }
 

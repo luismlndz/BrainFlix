@@ -17,13 +17,13 @@
   }
 
   &__thumbnail {
-    width: 140px;
+    width: 150px;
     height: 90px;
     align-self: flex-start;
     border-radius: 0.25rem;
 
     @include tablet {
-      width: 200px;
+      width: 170px;
       height: 100px;
     }
   }

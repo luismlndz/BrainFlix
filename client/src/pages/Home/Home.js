@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 import '../../BrainFlix.scss';
 import Video from '../../components/Video/Video';
 import VideoDetails from '../../components/VideoDetails/VideoDetails';
@@ -6,75 +6,53 @@ import NextVideos from '../../components/NextVideos/NextVideos';
 import axios from 'axios';
 const apiURL = 'http://localhost:8080'
 
+export default function Home(props) {
+  const [video, setVideo] = useState({})
+  const [nextVideos, setNextVideos] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
-export default class Home extends Component {
-
-  state = {
-    currentVideo: {},
-    currentVideoDetails: {
-      timestamp: 0,
-      comments: []
-    },
-    nextVideos: [],
-    isLoading: true
-  }
-  
-  // Set current video to url ID and then call api for video details & filter next videos
-  componentDidMount() {
-    console.log('home mount')
+  useEffect(() => {
     axios.get(`${apiURL}/videos`)
     .then((response) => {
-      this.setState({
-        currentVideo: response.data.find((video) => {
-          return video.id === this.props.match.params.id
-        })
-      }, () => {
-        axios.get(`${apiURL}/videos/${this.state.currentVideo.id}`)
-        .then((response) => {
-            this.setState({
-              currentVideoDetails: response.data,
-              nextVideos: filteredVideos, 
-              isLoading: false
-            })
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-        const filteredVideos = response.data.filter((video) => {
-          return video.id !== this.state.currentVideo.id
-        })
+      let current = response.data.find((video) => {
+        return video.id === props.match.params.id
+      })
+      setNextVideos(response.data.filter((video) => {
+        return video.id !== props.match.params.id
+      }))
+      return current
+    })
+    .then((current) => {
+      axios.get(`${apiURL}/videos/${current.id}`)
+      .then((response) => {
+        setVideo(response.data)
+        setIsLoading(false)
+      })
+      .catch((error) => {
+          console.log(error)
       })
     })
     .catch((error) => {
       console.log(error)
     })
-  }
+  }, [props.match.params.id])
 
-  // Update only if url changes or if comments are added / deleted
-  componentDidUpdate(prevProps) {
-    if(prevProps.match.params.id !== this.props.match.params.id) {
-      this.componentDidMount()
-    }
-  }
-
-  render() {
-    return (
-      <>
-      {!this.state.isLoading ? 
+  return (
+    <>
+      {!isLoading ? 
         <>
-          <Video currentVideo={this.state.currentVideo}/>
+          <Video {...props} videoDetails={video}/>
           <main>
             <div className="left-containter">
-              <VideoDetails {...this.props} videoDetails={this.state.currentVideoDetails}/>
+              <VideoDetails {...props} videoDetails={video}/>
             </div>
-            <NextVideos videos={this.state.nextVideos}/>
+            <NextVideos videos={nextVideos}/>
           </main>
         </>
       : <div className="loading">
           <p>Loading...</p>
           <p>If this takes too long, check server</p>
         </div>}
-      </>
-    );
-  }
+    </>
+  );
 }

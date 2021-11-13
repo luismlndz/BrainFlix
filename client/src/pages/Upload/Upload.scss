@@ -8,6 +8,7 @@
   justify-content: center;
   margin-bottom: 2rem;
   width: auto;
+  border-top: 1px solid $Mercury;
 
   @include tablet {
     margin: 0rem 3rem;
@@ -29,7 +30,7 @@
   &__title {
     font-family: "Avenir Next Bold";
     color: $BrainFlix-Black;
-    font-size: 2.25rem;
+    font-size: 2rem;
     line-height: 2.75rem;
     text-align: left;
 
@@ -42,7 +43,7 @@
   &__heading {
     font-family: "Avenir Next Bold";
     color: $Silver;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0rem;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
@@ -98,7 +99,7 @@
     width: auto;
     color: black;
     font-family: "Avenir Next Regular";
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: start;
     padding: 1rem;
 

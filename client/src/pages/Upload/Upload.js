@@ -1,9 +1,10 @@
 import './Upload.scss';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios'
 const apiURL = 'http://localhost:8080'
 
 export default function Upload() {
+  const history = useHistory()
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -27,6 +28,8 @@ export default function Upload() {
       axios.post(`${apiURL}/videos/`, newVideo)
         .then(res => console.log(res))
         .catch(err => console.log(err))
+      
+      history.push('/')
     }
     event.target.reset()
   }

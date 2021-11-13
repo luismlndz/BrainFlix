@@ -47,13 +47,14 @@ router.post('/', (req,res) => {
     }
 
     const video = {
-        title: title,
-        description: description, 
-        image: '../public/images/image0',
-        channel: 'Brainstation Man',
         id: uuidv4(),
+        title: title,
+        channel: "Brainstation Man",
+        image: "http://localhost:8080/images/bike.png",
+        description: description, 
         views: "0",
         likes: "0",
+        video: "https://project-2-api.herokuapp.com/stream",
         timestamp: new Date().getTime(),
         comments: []
     }

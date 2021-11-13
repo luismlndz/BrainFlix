@@ -1,10 +1,26 @@
 import "./Video.scss"
+import { useEffect, useRef } from "react";
 
 export default function Video(props) {
+  //Ref to refresh video on url change
+  const videoRef = useRef()
+  const previousId = useRef(props.match.params.id)
+
+  useEffect(() => {
+    if(previousId.current !== props.match.params.id) {
+      videoRef?.current.load()
+    }
+  }, [props.match.params.id])
 
   return (
     <div className="video-container">
-      <video className="video" controls poster={props.currentVideo.image}/>
+      <video 
+      ref={videoRef}
+      className="video" 
+      controls 
+      poster={props.videoDetails.image}>
+        <source src={`${props.videoDetails.video}/?api_key=key`}/>
+      </video>
     </div>
   );
 }
