@@ -5,6 +5,7 @@ const { v4: uuidv4 } = require('uuid')
 
 let videosData = []
 
+//Read data from json file
 getVideos = () => {
     fs.readFile('./data/videos.json', (err, data) => {
         if(err) {
@@ -41,6 +42,7 @@ router.get('/:id', (req, res) => {
 //Post new video
 router.post('/', (req,res) => {
     const { title, description } = req.body
+    const { PORT, BACKEND_URL } = process.env
 
     if(!title || !description) {
         res.status(400).send('Please provide a title and description in your body')
@@ -50,7 +52,7 @@ router.post('/', (req,res) => {
         id: uuidv4(),
         title: title,
         channel: "Brainstation Man",
-        image: "http://localhost:8080/images/bike.png",
+        image: `${BACKEND_URL}:${PORT}/images/bike.png`,
         description: description, 
         views: "0",
         likes: "0",
@@ -65,6 +67,7 @@ router.post('/', (req,res) => {
             res.status(500).send(err)
         
         console.log('Video uploaded successfully')
+        console.log(video)
         res.status(201).json(video)
     })
 })

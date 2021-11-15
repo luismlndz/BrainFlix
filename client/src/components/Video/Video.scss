@@ -4,12 +4,13 @@
 .video-container {
   background-color: black;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  max-height: 100vh;
 }
 
 .video {
   width: 100vw;
+  align-self: center;
 
   @include tablet {
     width: 90vw;

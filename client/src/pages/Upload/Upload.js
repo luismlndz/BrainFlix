@@ -29,7 +29,7 @@ export default function Upload() {
         .then(res => console.log(res))
         .catch(err => console.log(err))
       
-      history.push('/')
+      history.push(`/`)
     }
     event.target.reset()
   }

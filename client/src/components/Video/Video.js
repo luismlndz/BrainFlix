@@ -13,14 +13,13 @@ export default function Video(props) {
   }, [props.match.params.id])
 
   return (
-    <div className="video-container">
+    <div className='video-container'>
       <video 
-      ref={videoRef}
-      className="video" 
-      controls 
-      poster={props.videoDetails.image}>
-        <source src={`${props.videoDetails.video}/?api_key=key`}/>
-      </video>
+      ref={videoRef} 
+      className='video' 
+      poster={props.videoDetails.image} 
+      src={`${props.videoDetails.video}/?api_key=key`}
+      controls/>
     </div>
   );
 }
